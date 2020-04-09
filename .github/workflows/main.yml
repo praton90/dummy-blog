@@ -25,5 +25,7 @@ jobs:
     # Runs a set of commands using the runners shell
     - name: Install dependencies and deploy to GH Pages
       run: |
+        git config --global user.email "praton90@gmail.com"
+        git config --global user.name "Pablo Raton"
         npm i
         npm run deploy
