@@ -25,6 +25,18 @@ class Posts extends Component {
     ).toDateString();
   };
 
+  randomAuthor = () => {
+    const authors = [
+      "Gladwyn Faron Beasley",
+      "Edweena Vic Derricks",
+      "Kermit Capricia Shelby",
+      "Frederica Madelyn Stephens",
+      "Theodore Lemoine Jerome",
+    ];
+
+    return authors[Math.floor(Math.random() * (4 - 0)) + 0];
+  };
+
   componentDidMount() {
     axios
       .get("https://jsonplaceholder.typicode.com/posts")
@@ -34,6 +46,7 @@ class Posts extends Component {
         const fetchedPosts = res.data.slice(from, to).map((post) => ({
           ...post,
           createdAt: this.randomDate(),
+          author: this.randomAuthor(),
         }));
 
         this.setState({
