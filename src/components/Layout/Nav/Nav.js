@@ -1,17 +1,19 @@
 import React from "react";
 
-import styles from "./Nav.module.css";
+import "./Nav.css";
 import { NavLink } from "react-router-dom";
 
 const nav = (props) => {
   return (
-    <nav className={styles.Nav}>
+    <nav className="Nav">
       <ul>
         <li>
-          <NavLink to="/">Home</NavLink>
+          <NavLink to="/" exact>
+            HOME
+          </NavLink>
         </li>
         <li>
-          <NavLink to="/about">About this</NavLink>
+          <NavLink to="/about">ABOUT THIS</NavLink>
         </li>
       </ul>
     </nav>
